@@ -60,3 +60,6 @@ python3 cmake_to_bp.py --in CMakeLists.txt --out Android.bp
 
 ## 生成说明
 本 README、`Android.bp` 及 `cmake_to_bp.py` 由 Cursor 辅助生成与整理。
+
+## 生成说明（追加）
+Python 文件 `cmake_to_bp.py` 由 Cursor 生成。
