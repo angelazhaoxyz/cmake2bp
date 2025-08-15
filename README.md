@@ -57,3 +57,6 @@ python3 cmake_to_bp.py --in CMakeLists.txt --out Android.bp
 
 ---
 如需扩展脚本解析范围（例如支持更多 CMake 指令），可在 `cmake_to_bp.py` 中相应增加解析逻辑并重新生成。
+
+## 生成说明
+本 README、`Android.bp` 及 `cmake_to_bp.py` 由 Cursor 辅助生成与整理。
