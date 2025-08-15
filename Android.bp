@@ -1,0 +1,39 @@
+cc_library {
+  name: "iceoryx_dds",
+  srcs: [
+    "source/iceoryx_dds/log/logging.cpp",
+    "source/iceoryx_dds/dds/cyclone_context.cpp",
+    "source/iceoryx_dds/dds/cyclone_data_reader.cpp",
+    "source/iceoryx_dds/dds/cyclone_data_writer.cpp",
+    "source/iceoryx_dds/dds/iox_chunk_datagram_header.cpp",
+  ],
+  export_include_dirs: [
+    "include",
+    "dependencies/install/include",
+  ],
+  shared_libs: [
+    "iceoryx_posh",
+    "iceoryx_posh_config",
+    "iceoryx_posh_gateway",
+    "iceoryx_hoofs",
+    "ddscxx",
+  ],
+  cflags: [
+    "-DUSE_CYCLONE_DDS",
+  ],
+  cpp_std: "c++17",
+}
+
+cc_binary {
+  name: "iox-dds-gateway",
+  srcs: [
+    "source/gateway/main.cpp",
+  ],
+  shared_libs: [
+    "iceoryx_posh",
+    "iceoryx_posh_gateway",
+    "iceoryx_posh_config",
+    "iceoryx_dds",
+  ],
+  cpp_std: "c++17",
+}
